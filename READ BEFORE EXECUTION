@@ -1,0 +1,21 @@
+after placing all these 5 files in ur folder in the order - 
+
+medicine quality-folder/
+├── public-folder(inside the medicine quality-folder)/
+│   ├── index.html
+│   ├── form.html
+│   ├── results.html
+│   └── style.css
+└── server.js
+
+open terminal in ur vs code and execute this command - npm init -y
+the execute this command - npm install express body-parser
+to run the file use the command - node server.js (use this command every time u want to run)
+
+(due to some error, if u try running the file by clicking go live in index.html u won't get output of the result page hence don't try that)
+
+everytime u want to execute type command - node server.js
+
+contact Dhruthi incase of any issues
+
+bye~

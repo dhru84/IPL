@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Quality Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MEDICINE QUALITY MONITORING</h1>
+    </header>
+    <main>
+        <div class="results-container">
+            <h2>Medicine Quality Result</h2>
+            <p><strong>Medicine Name:</strong> <span id="medicineName">Unknown</span></p>
+            <p><strong>Chemical Composition:</strong> <span id="composition">N/A</span></p>
+            <p><strong>Prediction:</strong> <span id="prediction">N/A</span></p>
+            <p><strong>Warning:</strong> <span id="warning">N/A</span></p>
+            
+            <div class="button-container">
+                <a href="form.html"><button type="button">Search Another Medicine</button></a>
+                <a href="index.html"><button type="button">Back to Home</button></a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the URL search parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Get values from URL parameters and handle them properly
+            const medicine = urlParams.get('medicine');
+            const prediction = urlParams.get('prediction');
+            const warning = urlParams.get('warning');
+            const composition = urlParams.get('composition'); // Ensure this is being fetched correctly
+            
+            console.log("URL Parameters:", {medicine, prediction, warning, composition}); // Debug
+            
+            // Update the page content if parameters exist
+            if (medicine) {
+                document.getElementById('medicineName').textContent = medicine;
+            }
+            
+            if (composition) {
+                document.getElementById('composition').textContent = composition; // Ensure this is set correctly
+            }
+            
+            if (prediction) {
+                document.getElementById('prediction').textContent = prediction;
+            }
+            
+            if (warning) {
+                document.getElementById('warning').textContent = warning;
+            }
+        });
+    </script>
+</body>
+</html>

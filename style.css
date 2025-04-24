@@ -1,0 +1,380 @@
+/* General reset for body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;  /* Very light gray for soft, clean feel */
+    color: #333;  /* Dark text color for readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: auto; /* Allow scrolling if content exceeds the viewport */
+    position: relative;
+}
+
+/* Header section with updated design */
+header {
+    text-align: center;
+    background-color: #4CAF50;  /* Green background representing health */
+    color: white;
+    padding: 20px 0;
+    width: 100%;  /* Ensure header spans the full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers content horizontally inside the header */
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Slight shadow to give depth */
+    border-bottom: 5px solid #388E3C;  /* Darker border for depth */
+}
+
+/* Header title styling */
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Subheading under header */
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 500;
+    animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+/* Medical icon added to the header */
+header::before {
+    content: '\1F489'; /* Medical syringe icon */
+    font-size: 50px;
+    margin-bottom: 10px;
+    animation: bounce 1s infinite;
+}
+
+/* Main content area for both index and form */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    height: auto; /* Adjust height to fit content */
+    margin: 50px 0; /* Add spacing from the top */
+    position: relative;
+    overflow: hidden;  /* Prevent scrolling */
+}
+
+/* Content area inside index and form */
+.container {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    animation: slideIn 1s ease-out;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and button styling */
+input, select, button {
+    margin: 15px 0;
+    padding: 12px;
+    font-size: 16px;
+    width: 80%; /* Adjust the width */
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Input and button hover effect */
+input:hover, select:hover, button:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Results container box for content */
+.results-container {
+    text-align: left;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Styling for headings in results */
+.results-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    animation: fadeIn 1.5s ease-in-out 0.5s;
+}
+
+/* For each paragraph and sentence to be centered within the container */
+.results-container p {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* For list items in results */
+.results-container ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    font-size: 16px;
+}
+
+/* Footer section for all pages */
+footer {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cute animations for header and results */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fixes for content alignment */
+main {
+    height: auto; /* Adjust height to fit content */
+    margin: 50px 0; /* Add spacing from the top */
+}
+
+/* Button alignment */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a button {
+    text-decoration: none;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a button:hover {
+    background-color: #45a049;
+}
+
+/* Fix input fields width and alignment */
+input, button {
+    display: block;
+    margin: 10px auto; /* Center elements */
+    width: 90%; /* Ensure proper width on smaller screens */
+}
+
+/* Styling for the 'Get Started' button */
+.get-started-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.get-started-button:hover {
+    background-color: #45a049;
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* ========================================
+   NEW: Additional Medical-Themed Stickers
+   ======================================== */
+
+/* Ensure these elements can host stickers */
+header, main, .container, .results-container, footer {
+    position: relative;
+}
+
+/* Header sticker cluster */
+header::after {
+    content: "💊  ⚕️  🩺";
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    opacity: 0.6;
+}
+
+/* Main area sticker scatter */
+main::before {
+    content: "🧬  🧪  🧫  🩹";
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 40px;
+    opacity: 0.1;
+}
+
+main::after {
+    content: "💉  💊  ⚕️";
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    font-size: 35px;
+    opacity: 0.1;
+}
+
+/* Container corner stickers */
+.container::before {
+    content: "💊";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 50px;
+    opacity: 0.15;
+}
+
+.container::after {
+    content: "🩹";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 50px;
+    opacity: 0.15;
+}
+
+/* Results box extra stickers */
+.results-container::before {
+    content: "⚕️";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 45px;
+    opacity: 0.1;
+}
+
+.results-container::after {
+    content: "🧬  💊";
+    position: absolute;
+    bottom: -20px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 45px;
+    opacity: 0.1;
+}
+
+/* Footer sticker accent */
+footer::before {
+    content: "🩺";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    opacity: 0.5;
+}
+
+/* Buttons get their own small sticker */
+button::before {
+    content: "💊";
+    margin-right: 6px;
+}
+
+/* Get Started button sparkle */
+.get-started-button::after {
+    content: "✨";
+    margin-left: 8px;
+}

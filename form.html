@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Medicine Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Medicine Quality Monitoring</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Input Medicine Details</h2>
+            <form id="medicineForm" action="/results" method="post">
+                <input type="text" name="medicineName" placeholder="Medicine Name" required><br>
+                <input type="text" name="composition" placeholder="Chemical Composition" required><br>
+                <input type="date" name="expiryDate" required><br>
+                <a href="results.html"></a><button type="submit">Get Results</button></a>
+            </form>
+            <div class="button-container">
+                <a href="index.html"><button type="button">Back to Home</button></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

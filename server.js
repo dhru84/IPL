@@ -123,38 +123,44 @@ app.get('/', (req, res) => {
 // Handle form submission
 app.post('/results', (req, res) => {
     console.log("Form data received:", req.body);
-    
+
     const medicineName = req.body.medicineName?.trim() || "Unknown";
-    
+
     // Look up the medicine in our database
     const medicine = medicineData[medicineName];
-    
-    let prediction, warning, composition;
-    
+
+    let prediction, warning, composition, highUsageEffects;
+
     if (medicine) {
         // If medicine is found in our database
         prediction = medicine.prediction;
         warning = medicine.warning;
-        composition = medicine.components; // Ensure this is set correctly
+        composition = medicine.components.join(', ');  // Join components with a comma
+        highUsageEffects = medicine.highUsageEffects.join('; ');  // Join highUsageEffects with a semicolon
     } else {
         // Default values if medicine is not found
         prediction = "Unknown medicine. Please consult a healthcare professional.";
         warning = "Cannot provide specific warnings for unknown medicines.";
         composition = "N/A"; // Default value for composition
+        highUsageEffects = "N/A"; // Default value for high usage effects
     }
 
     console.log("Redirecting with parameters:", {
         medicine: medicineName,
         prediction: prediction,
         warning: warning,
-        composition: composition
+        composition: composition,
+        highUsageEffects: highUsageEffects
     });
 
+    console.log("High Usage Effects param:", highUsageEffects);
+
     // Redirect to results.html with query parameters
-    res.redirect(`/results.html?medicine=${encodeURIComponent(medicineName)}&prediction=${encodeURIComponent(prediction)}&warning=${encodeURIComponent(warning)}&composition=${encodeURIComponent(composition)}`);
+    res.redirect(`/results.html?medicine=${encodeURIComponent(medicineName)}&prediction=${encodeURIComponent(prediction)}&warning=${encodeURIComponent(warning)}&composition=${encodeURIComponent(composition)}&highUsageEffects=${encodeURIComponent(highUsageEffects)}`);
 });
 
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`✅ Server running at: http://localhost:${PORT}`);
 });
